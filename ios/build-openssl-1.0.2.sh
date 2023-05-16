@@ -90,6 +90,7 @@ do
     fi
 
 	# add -isysroot to CC=
+	# add "-target arm-apple-ios-simulator" when building arm iphone simulator
 	sed -ie "s!^CFLAG=!CFLAG=-isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -miphoneos-version-min=7.0 !" "Makefile"
 
 	make -j4 >> "${LOG}" 2>&1
